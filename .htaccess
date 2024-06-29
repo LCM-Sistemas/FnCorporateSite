@@ -1,0 +1,26 @@
+# Ativar o mecanismo de reescrita
+RewriteEngine On
+
+# Redirecionar HTTP para HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirecionar sem www para com www
+RewriteCond %{HTTP_HOST} ^fncorporate\.com\.br [NC]
+RewriteRule ^(.*)$ https://www.fncorporate.com.br/$1 [L,R=301]
+
+# Definir a página de erro 404 personalizada
+ErrorDocument 404 /404.html
+
+# Redirecionar todas as solicitações não encontradas para 404.html
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /404.html [L]
+
+# Configurações de CORS
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>

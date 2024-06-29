@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /login
+
+# URLs permitidas
+Allow: /portfolio/fncredcorp/fncredcorp.html
+Allow: /portfolio/fnhealth/fnhealth.html
+Allow: /portfolio/fnimob/fnimob.html
+Allow: /portfolio/fnparks/fnparks.html
+Allow: /portfolio/fnshop/fnshop.html
+Allow: /portfolio/fntech/fntech.html
+Allow: /portfolio/fntravel/fntravel.html
+Allow: /portfolio/funpoints/funpoints.html
+Allow: /portfolio/thermashotworld/thermashotworld.html
+Allow: /blog
+
+
+# URLs externas (não afetadas pelo robots.txt do seu site)
+# Facebook, Instagram, YouTube e LinkedIn não precisam ser listados aqui.
+
+Sitemap: https://fncorporate.com.br/sitemap.xml

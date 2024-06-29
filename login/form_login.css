@@ -1,0 +1,118 @@
+ 
+    /* Placeholder styling */
+    .login__input-text::placeholder {
+        color: inherit; /* herda a cor do texto */
+    }
+    .login__input-text::placeholder::after {
+        content: '*';
+        color: #DE0100 !important; /* Cor vermelha para o asterisco */
+    }
+    
+    /* Input text and select styling */
+    .login__input-text, .login__input-text select {
+      color: var(--fg);
+      font: 1em/1.5 "Nunito Sans", sans-serif;
+    }
+    
+    /* Select option styling */
+    .login__input-text select option {
+        color: #f7f7f7;
+        background-color: #2c2c2c;
+    }
+    
+    /* Success and error icon styling */
+    .success-icon {
+        font-size: 5em; /* Ajuste o tamanho conforme necessário */
+        color: #04B505; /* Cor verde */
+    }
+    .error-icon {
+        font-size: 5em; /* Ajuste o tamanho conforme necessário */
+        color: #DE0100; /* Cor vermelha */
+    }
+    
+    /* Error message styling */
+    .error-color {
+        color: #DE0100 !important;
+    }
+    
+    /* Wrapper styling */
+    .login__wrapper {
+        background-image: linear-gradient(#c1196d 40%, #06917e 90%) !important;
+        border-radius: 1.25em 1.25em 0 0;
+        display: flex;
+        flex-direction: column;
+        padding: .75em .75em 0;
+        height: min-content;
+        min-height: 100%;
+    }
+    
+    /* Button and form styling */
+    .login__button {
+        background-color: #e1117c;
+    }
+    .login__form {
+        border-radius: 0.1em !important;
+    }
+    
+    /* Container styling */
+    #container {
+        --border-size: 3px;
+        --border-angle: 0turn;
+        z-index: 100;
+        background-image: conic-gradient(from var(--border-angle), #2e3138, #2e3138 50%, #2e3138), conic-gradient(from var(--border-angle), transparent 20%, #e1117c, #2a8b79);
+        background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        animation: bg-spin 3s linear infinite;
+    }
+    #container:hover {
+        animation-play-state: paused;
+    }
+    
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
+    
+    @property --border-angle {
+        syntax: "<angle>";
+        inherits: true;
+        initial-value: 0turn;
+    }
+    
+    /* Element popup styling */
+    .elementor-popup-modal .dialog-close-button svg {
+        fill: #00FFF5 !important;
+        height: 1em;
+        width: 1em;
+    }
+    
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        -webkit-border-radius: 16px;
+    }
+    ::-webkit-scrollbar-track-piece {
+        background-color: rgb(0, 0, 0) transparent;
+        -webkit-border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:vertical {
+        height: 5px;
+        background-color: #DE01A4;
+        -webkit-border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:horizontal {
+        width: 5px;
+        background-color: rgb(0, 0, 0) transparent;
+        -webkit-border-radius: 3px;
+    }
+    
+    /* Success and error message styling */
+    #successMessage, #errorMessage {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+  

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Cadastro - FN Corporate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200..1000&amp;display=swap'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="https://lcmwebsites.com.br/fn2/login/favicon.png" type="image/x-icon">
+
+  <meta name="theme-color" content="#2e3138" />
+
+
+  <style>
+    .login__input-text::placeholder {
+        color: inherit; 
+    }
+    .login__input-text::placeholder::after {
+        content: '*';
+        color: #DE0100 !important; 
+    }
+    .login__input-text, .login__input-text select {
+        color: #ffffff;
+        font: 1em/1.5 "Nunito Sans", sans-serif;
+    }
+
+    .login__input-text select {
+        color: #f7f7f7;
+        background-color: #2c2c2c;
+    }
+
+    .login__input-text select option {
+        color: #000000 !important; 
+        background-color: #ffffff !important; 
+    }
+    #regime > option:nth-child(2), #regime > option:nth-child(3), #regime > option:nth-child(4), #regime > option:nth-child(5), #regime > option:nth-child(6), #regime > option:nth-child(1){
+        color: #000000 !important;
+    }
+   
+    .login__input-text select option:first-child {
+        display: none;
+    }
+
+    .login__input-text select:valid option:first-child {
+        display: block;
+    }
+
+    #successMessage, #errorMessage {
+        display: none;
+        text-align: left;
+        margin-top: 20px;
+    }
+    .body{
+        background-color: #2e3138;
+    }
+    @media (min-width: 1024px) {
+    .login__cta:before {
+        left: 0;
+        -webkit-mask: linear-gradient(90deg, black, rgba(0, 0, 0, 0));
+        display: none !important;
+    }
+}
+@media (min-width: 1024px) {
+    .login__cta:after {
+        right: 0;
+        -webkit-mask: linear-gradient(-90deg, black, rgba(0, 0, 0, 0));
+        display: none !important;
+    }
+}
+</style>
+</head>
+<body class="body" >
+    <form class="login" method="post" action="https://www.fncorporate.com.br/form/formulario_login.php" id="loginForm">
+        <div class="login__wrapper">
+            <img src="https://fncorporate.com.br/login/fivicon-fngroup-2.png" class="login__logo" width="50px" height="50px" alt="Logo">
+            <div class="login__cta">
+                <div class="login__cta-text">
+                    <h1>Faça Parte</h1>
+                    <p>Entre em contato conosco hoje mesmo e veja como podemos colaborar para impulsionar sua empresa.</p>
+                </div>
+                <div id="container" class="login__form">
+                    <h2 class="login__input-text"> Formulário de Contato </h2>
+                    <div class="campos_form">
+                        <div class="login__field">
+                            <input class="login__input-text" id="name" type="text" name="name" placeholder="Nome Completo*" autocomplete="off" required >
+                            <div class="login__error">
+                                <svg class="login__icon" width="12px" height="12px" aria-hidden="true">
+                                    <use href="#warning" />
+                                </svg>
+                                <span id="name-error" aria-live="assertive"></span>
+                            </div>
+                        </div>
+                        <div class="login__field">
+                            <input class="login__input-text" id="phone" type="text" name="phone" placeholder="Celular*" autocomplete="off" required >
+                            <div class="login__error">
+                                <svg class="login__icon" width="12px" height="12px" aria-hidden="true">
+                                    <use href="#warning" />
+                                </svg>
+                                <span id="phone-error" aria-live="assertive"></span>
+                            </div>
+                        </div>
+                        <div class="login__field">
+                            <input class="login__input-text" id="email" type="email" name="email" placeholder="Email*" autocomplete="off" required >
+                            <div class="login__error">
+                                <svg class="login__icon" width="12px" height="12px" aria-hidden="true">
+                                    <use href="#warning" />
+                                </svg>
+                                <span id="email-error" aria-live="assertive"></span>
+                            </div>
+                        </div>
+                        <div class="login__field">
+                            <select class="login__input-text" id="regime" name="regime" required >
+                                <option value="" disabled selected>Selecione o regime tributário* &darr;</option>
+                                <option value="Simples">Simples</option>
+                                <option value="Lucro real">Lucro real</option>
+                                <option value="Lucro presumido">Lucro presumido</option>
+                                <option value="Sem fim lucrativo">Sem fim lucrativo</option>
+                                <option value="Governamental">Governamental</option>
+                            </select>
+                            <div class="login__error">
+                                <svg class="login__icon" width="12px" height="12px" aria-hidden="true">
+                                    <use href="#warning" />
+                                </svg>
+                                <span id="regime-error" aria-live="assertive"></span>
+                            </div>
+                        </div>
+                        <div class="login__field">
+                            <input class="login__input-text" id="cnpj" type="text" name="cnpj" placeholder="CNPJ*" autocomplete="off" required >
+                            <div class="login__error">
+                                <svg class="login__icon" width="12px" height="12px" aria-hidden="true">
+                                    <use href="#warning" />
+                                </svg>
+                                <span id="cnpj-error" aria-live="assertive"></span>
+                            </div>
+                        </div>
+                        <div class="login__field">
+                            <input class="login__input-text" id="role" type="text" name="role" placeholder="Cargo*" autocomplete="off" required >
+                            <div class="login__error">
+                                <svg class="login__icon" width="12px" height="12px" aria-hidden="true">
+                                    <use href="#warning" />
+                                </svg>
+                                <span id="role-error" aria-live="assertive"></span>
+                            </div>
+                        </div>
+                        <div class="login__field">
+                            <label for="terms" style="color: #fff;" >
+                                <input type="checkbox" id="terms" name="terms" checked>
+                                Aceito os <a href="#" style="text-decoration: none;" >Termos</a> e <a href="#" style="text-decoration: none;" > Políticas </a>
+                            </label>
+                        </div>
+                        <div class="login__field">
+                            <div class="login__error">
+                                <svg class="login__icon" width="12px" height="12px" aria-hidden="true">
+                                    <use href="#warning" />
+                                </svg>
+                                <span id="submit-error" aria-live="assertive"></span>
+                            </div>
+                            <button class="login__button" type="submit" data-login>Enviar Agora</button>
+                        </div>
+                    </div>
+                    <div id="successMessage" style="display:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#04B505" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                        </svg>
+                        <br>
+                        <h2 class="font-329340 fontsize-155944 fontspace-781688 font-weight-300 text-color-lxmt-color">Dados enviados com Sucesso.<br>Obrigada!</h2>
+                    </div>
+                    <div id="errorMessage" style="display:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#DE0100" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+                        </svg>
+                        <br>
+                        <h2 class="font-329340 fontsize-155944 fontspace-781688 font-weight-300 error-color">Desculpe, houve um problema ao enviar o formulário.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Cleave('#phone', {
+                delimiters: ['(', ') ', '-'],
+                blocks: [0, 2, 5, 4],
+                numericOnly: true
+            });
+    
+            new Cleave('#cnpj', {
+                delimiters: ['.', '.', '/', '-'],
+                blocks: [2, 3, 3, 4, 2],
+                numericOnly: true
+            });
+    
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+    
+                var formData = new FormData(this);
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'https://www.fncorporate.com.br/form/formulario_login.php', true);
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        var fields = document.querySelector('.campos_form');
+                        if (response.status === 'success') {
+                            fields.style.display = 'none';
+                            document.getElementById('errorMessage').style.display = 'none';
+                            document.getElementById('successMessage').style.display = 'block';
+                        } else {
+                            fields.style.display = 'none';
+                            document.getElementById('successMessage').style.display = 'none';
+                            document.getElementById('errorMessage').innerHTML = response.message.join("<br>");
+                            document.getElementById('errorMessage').style.display = 'block';
+                        }
+                    } else {
+                        var fields = document.querySelector('.campos_form');
+                        fields.style.display = 'none';
+                        document.getElementById('successMessage').style.display = 'none';
+                        document.getElementById('errorMessage').style.display = 'block';
+                    }
+                };
+                xhr.send(formData);
+            });
+        });
+    </script>
+</body>
+</html>

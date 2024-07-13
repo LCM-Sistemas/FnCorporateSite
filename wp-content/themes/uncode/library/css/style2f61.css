@@ -4392,11 +4392,11 @@ div > .icon-box:last-child {
   height: 12em;
 }
 .icon-box-left .icon-box-content {
-  padding-left: 18px;
+  padding-left: 10px;
 }
 @media (min-width: 960px) {
   .icon-box-left .icon-box-content {
-    padding-left: 27px;
+    padding-left: 10px;
   }
 }
 .icon-box-left .icon-box-content:not(.add-margin) p {

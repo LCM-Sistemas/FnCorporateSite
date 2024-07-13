@@ -6,8 +6,8 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Redirecionar sem www para com www
-RewriteCond %{HTTP_HOST} ^fncorporate\.com\.br [NC]
-RewriteRule ^(.*)$ https://www.fncorporate.com.br/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^lcmsistemas\.com\.br [NC]
+RewriteRule ^(.*)$ https://www.lcmsistemas.com.br/$1 [L,R=301]
 
 # Definir a página de erro 404 personalizada
 ErrorDocument 404 /404.html
